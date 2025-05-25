@@ -2,10 +2,10 @@
 module.exports = {
   inputDir: 'src', // Write all your vanilla content here
   outputDir: 'dist', // This is where the converted files will be created
-  dontFlatten: false, // Keep compound selectors rather than BEM-style flattening
+  dontFlatten: true, // Keep compound selectors rather than BEM-style flattening
   useIDs: false, // Use IDs (1, 2, 3, 4) instead of hash (3d0ccd)
   dontHashFirst: false, // The first scope of a certain type doesn't get an ID or hash
-  mergeCss: true, // Merge all the CSS into one style.css
+  mergeCss: 'my-style.css', // Merge all the CSS into one css file
   writeRuntimeMap: true, // Write the map needed for runtime auto-BEM
   copyImgs: true, // Copy images to the output folder
   copyJs: true, //Copy JS files - auto-disabled with webpack
@@ -15,4 +15,6 @@ module.exports = {
   flattenCombis: [], //Flatten combinators, e.g. > becomes _a_
   strictBEM: true, //Use - instead of __ after the first occurence
   overrideConfig: {},
+
+  inputCss: ['src/css/**.css', '!src/css/style.css'],
 };
